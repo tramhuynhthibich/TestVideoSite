@@ -2,23 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Video Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Camera App</title>
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; }
-        video { max-width: 100%; height: auto; border: 2px solid #333; }
+        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f0f0f0; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+        video { max-width: 100%; border-radius: 4px; background: #000; }
+        .controls { margin-top: 15px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+        button:hover { background: #0056b3; }
+        #photo { margin-top: 20px; max-width: 100%; border: 2px solid #ddd; }
+        canvas { display: none; } /* Used internally to grab the frame */
     </style>
 </head>
 <body>
+    <div class="container">
+        <h2>Live Web Camera</h2>
+        <!-- autoplay and playsinline are required for many browsers to work -->
+        <video id="webcam" autoplay playsinline width="640" height="480"></video>
+        
+        <div class="controls">
+            <button id="snap">Take Snapshot</button>
+        </div>
 
-    <h1>Welcome to My Video Page</h1>
-
-    <!-- The Video Player -->
-    <!-- <video width="1000" controls autoplay muted playsinline loop>
-        <source src="Videos/Applaydu_Intro_BASIC_EN.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video> -->
-	
-	<input type="file" accept="image/*" capture="environment">
-
+        <canvas id="canvas" width="640" height="480"></canvas>
+        
+        <div id="preview">
+            <h3>Captured Photo</h3>
+            <img id="photo" src="//:0" alt="Capture will appear here">
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
