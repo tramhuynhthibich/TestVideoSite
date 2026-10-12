@@ -37,5 +37,4 @@ initCamera();
 function CallFromJS()
 {
     console.log("CallFromJS called");
-    alert("CallFromJS called");
 }
