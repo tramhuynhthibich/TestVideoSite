@@ -71,3 +71,43 @@ function testSaveDataURL()
 };
 
 
+
+// 4. Upload the selected image to the server (handled by server.js at POST /upload)
+async function uploadImage()
+{
+    const input = document.getElementById('imageUpload');
+    const status = document.getElementById('uploadStatus');
+    const preview = document.getElementById('uploadedImage');
+
+    const file = input.files[0];
+    if (!file)
+    {
+        status.textContent = 'Please choose an image first.';
+        return;
+    }
+
+    status.textContent = 'Uploading...';
+    try
+    {
+        const response = await fetch('/upload', {
+            method: 'POST',
+            headers: {
+                'Content-Type': file.type || 'image/jpeg',
+                'X-File-Name': encodeURIComponent(file.name)
+            },
+            body: file
+        });
+        const result = await response.json();
+        if (!response.ok)
+        {
+            throw new Error(result.error || response.statusText);
+        }
+        status.textContent = 'Uploaded: ' + result.url;
+        preview.src = result.url;
+        preview.style.display = 'block';
+    } catch (err)
+    {
+        console.error('Upload failed: ', err);
+        status.textContent = 'Upload failed: ' + err.message;
+    }
+}

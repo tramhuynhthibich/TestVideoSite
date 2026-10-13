@@ -36,6 +36,14 @@
     <button onclick="CallFromJS()">Call From JS</button>
     <a href="https://qr.kinder.com/VS509">https://qr.kinder.com/VS509</a>
     <hr />
+    <!-- Upload an image to the server -->
+    <div id="uploadSection">
+        <input id="imageUpload" type="file" accept="image/*">
+        <button onclick="uploadImage()">Upload Image</button>
+        <p id="uploadStatus"></p>
+        <img id="uploadedImage" style="max-width: 300px; display: none;" alt="Uploaded image">
+    </div>
+    <hr />
     <p><a href="javascript:void(0)" onclick="testSaveDataURL();">Test saveDataURL</a> (experimental, only for
         Android/iOS)</p>
     <hr />
