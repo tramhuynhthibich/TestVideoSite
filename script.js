@@ -48,12 +48,6 @@ async function initCamera()
 
 initCamera();
 
-// 3. Called from the button in index.html
-function CallFromJS()
-{
-    console.log("CallFromJS called");
-}
-
 function testSaveDataURL()
 {
     var canvas = document.createElement('canvas');

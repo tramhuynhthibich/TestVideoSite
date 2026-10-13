@@ -29,12 +29,15 @@
         <source src="Videos/Applaydu_Intro_BASIC_EN.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
-    <input type="text">
-    <input type="file" accept="image/*" capture="environment">
+    <!-- <input type="text"> -->
+    <!-- <input type="file" accept="image/*" capture="environment"> -->
 
+    <hr />
+    <button onclick="Unity.call('PawPatrol-CloseImageBrowser');">Close In Game Browser</button>
 
-    <button onclick="CallFromJS()">Call From JS</button>
+    <hr />
     <a href="https://qr.kinder.com/VS509">https://qr.kinder.com/VS509</a>
+
     <hr />
     <!-- Upload an image to the server -->
     <div id="uploadSection">
@@ -43,12 +46,14 @@
         <p id="uploadStatus"></p>
         <img id="uploadedImage" style="max-width: 300px; display: none;" alt="Uploaded image">
     </div>
+
     <hr />
     <p><a href="javascript:void(0)" onclick="testSaveDataURL();">Test saveDataURL</a> (experimental, only for
         Android/iOS)</p>
+
     <hr />
     <div id="msg">[]</div>
-    <p><a href="javascript:void(0)" onclick="Unity.call('anchor');">[Send Message!]</a></p>
+    <!-- <p><a href="javascript:void(0)" onclick="Unity.call('anchor');">[Send Message!]</a></p> -->
     <form method="get" action="form">
         <input id="input1" type="text" value="hoge" name="msg" />
         <input type="submit" value="Send Message!"
