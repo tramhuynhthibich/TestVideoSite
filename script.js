@@ -13,27 +13,27 @@ window.addEventListener(
             3000);
     });
 
-const video = document.getElementById('webcam');
-const canvas = document.getElementById('canvas');
-const snapButton = document.getElementById('snap');
-const photo = document.getElementById('photo');
+// const video = document.getElementById('webcam');
+// const canvas = document.getElementById('canvas');
+// const snapButton = document.getElementById('snap');
+// const photo = document.getElementById('photo');
 
 // 1. Request camera access as soon as the script loads
-async function initCamera()
-{
-    try
-    {
-        const stream = await navigator.mediaDevices.getUserMedia({
-            video: { facingMode: 'user' }, // Front camera on mobile
-            audio: false
-        });
-        video.srcObject = stream;
-    } catch (err)
-    {
-        console.error("Camera access denied: ", err);
-        alert("Please enable camera permissions and ensure you're using HTTPS.");
-    }
-}
+// async function initCamera()
+// {
+//     try
+//     {
+//         const stream = await navigator.mediaDevices.getUserMedia({
+//             video: { facingMode: 'user' }, // Front camera on mobile
+//             audio: false
+//         });
+//         video.srcObject = stream;
+//     } catch (err)
+//     {
+//         console.error("Camera access denied: ", err);
+//         alert("Please enable camera permissions and ensure you're using HTTPS.");
+//     }
+// }
 
 // 2. Capture a frame from the video when the button is clicked
 // snapButton.addEventListener('click', () => {
@@ -46,7 +46,7 @@ async function initCamera()
 //     photo.src = imageData;
 // });
 
-initCamera();
+// initCamera();
 
 function testSaveDataURL()
 {
